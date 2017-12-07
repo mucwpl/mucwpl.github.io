@@ -151,6 +151,58 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-gitadd问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="git-add-的时候遇到warning-LF-will-be-replaced-by-CRLF-in-……-解决办法"><a href="#git-add-的时候遇到warning-LF-will-be-replaced-by-CRLF-in-……-解决办法" class="headerlink" title="git add . 的时候遇到warning: LF will be replaced by CRLF in …… 解决办法"></a>git add . 的时候遇到warning: LF will be replaced by CRLF in …… 解决办法</h1><p>解决方法：</p>
+<p>在deploy.sh文件中添加下面代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global core.autocrlf false</div></pre></td></tr></table></figure>
+<p>原因就是：</p>
+<p>​    路径中存在 / 的符号转义问题，false就是不转换符号默认是true，相当于把路径的 / 符号进行转义，这样添加的时候就有问题</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/07/gitadd问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Hexo写博客插入图片方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
