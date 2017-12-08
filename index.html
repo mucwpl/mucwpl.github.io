@@ -151,6 +151,110 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-python(二)-循环结构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="python-二-—选择和循环结构"><a href="#python-二-—选择和循环结构" class="headerlink" title="python(二)—选择和循环结构"></a>python(二)—选择和循环结构</h1><h2 id="一、选择结构"><a href="#一、选择结构" class="headerlink" title="一、选择结构"></a>一、选择结构</h2><p>​    选择结构有三种，分别为单分支，双分支，多分支选择结构</p>
+<p>​    if语句的执行过程是：计算表达式的值，若值为true,则执行if后面的语句块，若为false,则直接执行后续语句</p>
+<p>​    ·单分支选择一般格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if 条件句：</div><div class="line"></div><div class="line">         语句块</div></pre></td></tr></table></figure>
+<p>​    ·双分支选择结构一般格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">if 条件句：</div><div class="line"></div><div class="line">         语句块</div><div class="line"></div><div class="line">else：</div><div class="line"></div><div class="line">         语句块</div></pre></td></tr></table></figure>
+<p>​    ·多分支选择结构一般格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">if 条件句：</div><div class="line"></div><div class="line">         语句块</div><div class="line"></div><div class="line">elif 条件句：</div><div class="line"></div><div class="line">         语句块</div><div class="line"></div><div class="line">else：</div><div class="line"></div><div class="line">         语句块</div></pre></td></tr></table></figure>
+<p>​    下面演示一个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">s = int(input(&quot;your grade:&quot;))  #input输入是返回数值字符串类型（str),调用int()函数转换为整型</div><div class="line">if s &gt; 90:</div><div class="line">	print (&quot;优秀&quot;)</div><div class="line">elif s &gt;=60:</div><div class="line">	print(&quot;及格&quot;)</div><div class="line">else:</div><div class="line">	print(&quot;不及格&quot;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">your grade:50</div><div class="line">不及格</div></pre></td></tr></table></figure>
+<p>​    elif是else if的缩写，完全可以有多个elif，if语句执行有个特点，它是从上往下判断，如果在某个判断上是True，把该判断对应的语句执行后，就忽略掉剩下的elif和else</p>
+<h2 id="二、循环结构"><a href="#二、循环结构" class="headerlink" title="二、循环结构"></a>二、循环结构</h2><h3 id="1、while语句"><a href="#1、while语句" class="headerlink" title="1、while语句"></a>1、while语句</h3><p>​    while的表达式表示循环条件，先计算表达式的值，结果解释为true或者false,如果是true,执行循环体中的语句，如果是false,才结束循环。</p>
+<p>​    ·while语句一般表达式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">while 表达式:</div><div class="line">	语句块(循环体)	#循环体可以是单语句，也可以是多语句，多语句必须缩进对齐</div></pre></td></tr></table></figure>
+<p>​    例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">p,n,r = 1,0,0.3</div><div class="line">while p &lt; 2:</div><div class="line">	n+=1 #相当于 n=n+1</div><div class="line">	p*=1+ r</div><div class="line">print (n,p)</div></pre></td></tr></table></figure>
+<p>​    注意：如果表达式永远为true，循环体将会无限的执行下去（“死”循环），所以要修改表达式的值，使其趋向false的值，尽量避免死循环,进入死循环后，可用Ctrl+C退出死循环。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">n = 1</div><div class="line">while n ==1:</div><div class="line">	print(&apos;good&apos;)</div></pre></td></tr></table></figure>
+<p>​    ·在while语句中使用else语句</p>
+<p>​    else会在循环正常执行完情况下执行，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">n = int(input())</div><div class="line">while n &lt; 3:</div><div class="line">	print(n)</div><div class="line">	n+=1</div><div class="line">else:</div><div class="line">	print(&quot;n&gt;=3&quot;,n)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">2</div><div class="line">2</div><div class="line">n&gt;=3 3</div></pre></td></tr></table></figure>
+<h3 id="2、for循环"><a href="#2、for循环" class="headerlink" title="2、for循环"></a>2、for循环</h3><p>​    for语句的一般格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">for 目标变量 in 序列对象：</div><div class="line">	语句块</div></pre></td></tr></table></figure>
+<p>​    for语句将序列对象中元素逐个赋值给目标变量，目标变量的作用的存储每一次循环引用的序列对象元素，每一次赋值，执行一遍语句块，序列遍历后，结束循环后，执行for后面的语句。列表，元组，字符串都可以当序列，用于for循环时，元组和列表都是同样的作用,循环的次数取决于序列元素的个数，而不是值。例如：</p>
+<p>​    ·遍历列表循环</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">fs = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]</div><div class="line">for f in fs:</div><div class="line">	print(f)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a</div><div class="line">b</div><div class="line">c</div></pre></td></tr></table></figure>
+<p>​    ·遍历元组循环</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ys = (&apos;a&apos;,&apos;b&apos;,&apos;c&apos;)</div><div class="line">for y in ys:</div><div class="line">	print(y)</div></pre></td></tr></table></figure>
+<p>​    ·遍历字符串循环</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">st = &quot;hello,world&quot;</div><div class="line">for i in st:</div><div class="line">	print(i)</div></pre></td></tr></table></figure>
+<p>​    ·在循环体中也可以引用目标变量，这样能控制循环次数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">s = 0</div><div class="line">for i in [&apos;1&apos;,&apos;2&apos;,&apos;3&apos;]:</div><div class="line">	print(i)</div><div class="line">	s=i+1</div><div class="line">print(s)</div></pre></td></tr></table></figure>
+<p>​    ·可以在循环体中修改目标变量的值，当程序执行循环再次回到循环开始是，会被当成下一个元素，退出循环后，该变量就是循环序列中最后的元素，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">s = [&apos;1&apos;,&apos;2&apos;,&apos;3&apos;]</div><div class="line">for i in s:</div><div class="line">	print(i)</div><div class="line">	i=5</div><div class="line">	print(&quot;修改后i的值&quot;,i)</div><div class="line">print(&quot;结束循环后i的值&quot;,i)</div><div class="line">print(&quot;结束循环后s的值&quot;,s)</div></pre></td></tr></table></figure>
+<p>​    ·for语句也支持else快，功能和while一样，如果循环离开没有遇到break语句，就会执行else语句。例如；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">for i in [&apos;1&apos;,&apos;2&apos;,&apos;3&apos;]:</div><div class="line">	print(i)</div><div class="line">else:</div><div class="line">	print(&quot;hello,world&quot;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">hello,world</div></pre></td></tr></table></figure>
+<p>​    ·range对象在for循环中的使用</p>
+<p>​    rang()函数返回的是可迭代的对象，python调用内置函数iter()获得迭代器，自动调用内置函数next()获取元素，如果遍历一个数列，可以用range 对象，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">for i in rang(0,1):</div><div class="line">	print(i)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">0</div><div class="line">1</div></pre></td></tr></table></figure>
+<p>​    ·注意：在这里说明一下range的用法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; range(5) #代表从0到5(不包含5)</div><div class="line">[0, 1, 2, 3, 4]</div><div class="line">&gt;&gt;&gt; range(1,5) #代表从1到5(不包含5)</div><div class="line">[1, 2, 3, 4]</div><div class="line">&gt;&gt;&gt; range(1,5,2) #代表从1到5，间隔2(不包含5)</div><div class="line">[1, 3]</div></pre></td></tr></table></figure>
+<h3 id="3、break语句"><a href="#3、break语句" class="headerlink" title="3、break语句"></a>3、break语句</h3><p>​    break用在循环体中，让循环停止，继续执行循环结构后面的语句。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">n = 5</div><div class="line">while n&gt;0:</div><div class="line">	print(n)</div><div class="line">	n=n-1</div><div class="line">	if n==2:break</div><div class="line">print(&quot;循环结束后的n:&quot;,n)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">5</div><div class="line">4</div><div class="line">3</div><div class="line">循环结束后的n: 2</div></pre></td></tr></table></figure>
+<h3 id="4、continue语句"><a href="#4、continue语句" class="headerlink" title="4、continue语句"></a>4、continue语句</h3><p>​    continue语句执行时，不会退出循环结构，而是结束本次循环，重新开始下一轮循环，也是就跳过continue后面的语句,例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">n = 0</div><div class="line">while n &lt; 10:</div><div class="line">    n = n + 1</div><div class="line">    if n  == 3: # 当n=3，执行continue语句</div><div class="line">        continue # continue语句会直接继续下一轮循环，后续的print()语句不会执行</div><div class="line"> </div><div class="line">    print(n)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1</div><div class="line">2</div><div class="line">4</div><div class="line">5</div></pre></td></tr></table></figure>
+<p>·注意：continue和break的区别就是continue只结束本次循环，而不是终止整个循环，break是跳出所在的循环体</p>
+<h3 id="5、pass语句"><a href="#5、pass语句" class="headerlink" title="5、pass语句"></a>5、pass语句</h3><p>pass是一个空语句，代表空操作。循环体可以包括一个或多个语句，但不能空语句，所以当只是想让程序循环一定次数，循环过程什么都不操作，就可以调用pass。例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">for x in rang(0,10)	#该语句会循环10次，但是循环之外，什么都没操作</div><div class="line">	pass</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">for i in &apos;hello&apos;:</div><div class="line">	if i==&apos;o&apos;:</div><div class="line">		pass</div><div class="line">		print(&quot;world&quot;)</div><div class="line">	print(i)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">h</div><div class="line">e</div><div class="line">l</div><div class="line">l</div><div class="line">world</div><div class="line">o</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/08/python(二)-循环结构/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-gitadd问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -267,7 +371,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Python入门基础"><a href="#Python入门基础" class="headerlink" title="Python入门基础"></a>Python入门基础</h1><h2 id="一、python开发环境搭建"><a href="#一、python开发环境搭建" class="headerlink" title="一、python开发环境搭建"></a><strong>一、python开发环境搭建</strong></h2><p>​    Python语言有着优雅，清晰，简洁的语法特点，是一种面向对象，解释型，动态结构数据类型的高级程序设计语言。</p>
+        <h1 id="Python入门基础"><a href="#Python入门基础" class="headerlink" title="Python入门基础"></a>Python入门基础</h1><h2 id="一、python起源"><a href="#一、python起源" class="headerlink" title="一、python起源"></a><strong>一、python起源</strong></h2><p>​    Python语言有着优雅，清晰，简洁的语法特点，是一种面向对象，解释型，动态结构数据类型的高级程序设计语言。</p>
 <p>​    Python起源于1989年末，作者是荷兰CWI研究所的一名研究员Guido vonRossum，python第一个公开版本于1991年发布，由于功能强大和开源方式，发展迅速，深受广大开发者喜爱，很快形成了一个庞大的语言社区。Pyhton2.0在2000.10发布，更新了许多新的语法，python3.0于2008.09发布，python3的语法和之前的python2.x版本不完全兼容，所以早期很多python的程序无法在python3.x上运行。</p>
 <p>​    Python有着简单易学，程序可读性好，丰富的数据类型，开源的，解释型的语言优势，既可以面向对象，也可以面向过程，支持灵活的程序设计方式。</p>
 <h2 id="二、搭建python开发环境"><a href="#二、搭建python开发环境" class="headerlink" title="二、搭建python开发环境"></a>二、搭建python开发环境</h2><h3 id="1、python下载和安装"><a href="#1、python下载和安装" class="headerlink" title="1、python下载和安装"></a>1、python下载和安装</h3><p>​    要用python开发程序，必须先搭建其开发环境，去官网下载最新一个python3.6.3.exe,下载完成后，勾选”Add python 3.6 toPATH”,并使用默认路径，单击”Install Now”,安装完成后点”close”就可以了。</p>
