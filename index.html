@@ -151,6 +151,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux-python3安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Linux-python3安装"><a href="#Linux-python3安装" class="headerlink" title="Linux python3安装"></a>Linux python3安装</h1><h2 id="一、下载安装"><a href="#一、下载安装" class="headerlink" title="一、下载安装"></a>一、下载安装</h2><p>​    1、去官网下载安装包，下载下图的版本。</p>
+<p>​    官网：<a href="https://www.python.org/" target="_blank" rel="external">https://www.python.org/</a></p>
+<img src="/2017/12/12/Linux-python3安装/1.png" alt="1.png" title="">
+<p>​    2、释放文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -xvzf Python-3.6.3.tgz</div></pre></td></tr></table></figure>
+<p>​    3、进入目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd Python-3.6.3</div></pre></td></tr></table></figure>
+<p>​    4、配置安装目录，其他默认</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./configure --prefix=/usr/local/python3</div></pre></td></tr></table></figure>
+<p>​    5、执行编译</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make</div></pre></td></tr></table></figure>
+<p>​    6、执行安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make install</div></pre></td></tr></table></figure>
+<p>​    注意：如果安装失败，显示cannot create directory `/usr/local/python3’: Permission denied，进入root权限安装试一试</p>
+<p>​    7、安装成功，则会显示下面信息</p>
+<img src="/2017/12/12/Linux-python3安装/2.png" alt="2.png" title="">
+<p>​    8、做软连接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ln -s /usr/local/python3/bin/python3.6 /usr/local/bin/python3</div></pre></td></tr></table></figure>
+<p>​    9、做pip软连接</p>
+<img src="/2017/12/12/Linux-python3安装/3.png" alt="3.png" title="">
+<p>​    10、升级pip</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Pip install –upgrade pip</div></pre></td></tr></table></figure>
+<h2 id="二、安装readline和ncurses库"><a href="#二、安装readline和ncurses库" class="headerlink" title="二、安装readline和ncurses库"></a>二、安装readline和ncurses库</h2><p>​    python3交互式界面特别不好用，特别是删除不能正常使用，必须按Ctrl+删除键才可以，上下键重复命令也无法使用，左右调整光标也无法使用，这样调试代码效率很低，原因是python3缺少readline这个依赖，默认使用pip3 install readline会提示找不到包，所以只能手动安装。</p>
+<p>​    因为readline依赖于ncurses库，如果没有这个库，编译readline的时候会提示can not find -lncurses</p>
+<p>​    1、安装ncurses</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install ncurses ncurses-devel</div></pre></td></tr></table></figure>
+<p>​    2、安装ncurses库之后，再安装readline，readline可以在pypi下载，官网地址：<a href="https://pypi.python.org/pypi/readline，这里一定要下载源码包，其余的只能用于python2，下载之后执行下面命令安装：" target="_blank" rel="external">https://pypi.python.org/pypi/readline，这里一定要下载源码包，其余的只能用于python2，下载之后执行下面命令安装：</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">tar -xvzf readline-6.2.4.1.tar.gz</div><div class="line">cd readline-6.2.4.1/</div><div class="line">python3 setup.py install</div></pre></td></tr></table></figure>
+<p>​    注意：注意：安装失败的，可以进入root权限安装</p>
+<h2 id="三、安装其他库"><a href="#三、安装其他库" class="headerlink" title="三、安装其他库"></a>三、安装其他库</h2><p>可以直接用pip安装，pip install +库名；比如安装requests库</p>
+<img src="/2017/12/12/Linux-python3安装/4.png" alt="4.png" title="">
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/12/Linux-python3安装/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-python(二)-循环结构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
